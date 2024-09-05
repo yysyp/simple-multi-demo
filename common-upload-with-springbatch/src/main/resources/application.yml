@@ -1,0 +1,47 @@
+server:
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:keys/simpledemo.p12
+    key-store-password: simpledemo.sp
+    key-alias: simpledemo
+    enabled: false #Here to turn on/off https
+  port: 10001
+  tomcat:
+    uri-encoding: UTF-8
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+spring:
+  application:
+    name: common-upload-with-springbatch
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+  profiles:
+    active: dev
+  config:
+    import:
+      - optional:c:/myconfigs/app.yml
+
+myprop:
+  connUrl: hhh-${TMP}-bbb
+  age: 123
+
+embedded:
+  mongo:
+    port: 27027
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
