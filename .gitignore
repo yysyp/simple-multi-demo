@@ -4,6 +4,7 @@ upload-folder/
 ignorefolder/
 tmp/
 out/
+log/
 mypythonvenv
 venv
 .venv
