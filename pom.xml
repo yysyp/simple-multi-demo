@@ -18,6 +18,7 @@
         <module>a-module-template</module>
         <module>common-upload-with-springbatch</module>
         <module>springboot-opa</module>
+        <module>opa-springboot-demo-main</module>
     </modules>
 
 
