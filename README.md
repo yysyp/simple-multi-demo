@@ -2,6 +2,7 @@
 Simple multiple demos
 
 a-module-template: (This is a template module, for copy-create new module)
+http://localhost:10000/
 http://localhost:10000/swagger-ui/index.html
 http://localhost:10000/cart/detail?userId=1&cartId=1
 
