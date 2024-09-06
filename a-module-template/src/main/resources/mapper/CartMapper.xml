@@ -3,17 +3,17 @@
 
 <mapper namespace="ps.demo.repository.CartMapper">
 
-    <resultMap id="cartWithItemsResult" type="ps.demo.entity.Cart">
+    <resultMap id="cartWithItemsResult" type="entity.ps.demo.commonlibx.Cart">
         <id column="id" property="id"/>
         <result column="user_id" property="userId"/>
         <result column="total_price" property="totalPrice"/>
         <result column="created_at" property="createdAt"/>
         <collection property="items"
-                    ofType="ps.demo.entity.CartItem"
+                    ofType="entity.ps.demo.commonlibx.CartItem"
                     resultMap="cartItemResult"/>
     </resultMap>
 
-    <resultMap id="cartItemResult" type="ps.demo.entity.CartItem">
+    <resultMap id="cartItemResult" type="entity.ps.demo.commonlibx.CartItem">
         <id column="item_id" property="id"/>
         <result column="cart_id" property="cartId"/>
         <result column="product_id" property="productId"/>
