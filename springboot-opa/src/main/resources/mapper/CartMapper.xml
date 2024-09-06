@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="ps.demo.commonlibx.repository.CartMapper">
+<mapper namespace="ps.demo.springopa.repository.CartMapper">
 
-    <resultMap id="cartWithItemsResult" type="ps.demo.commonlibx.entity.Cart">
+    <resultMap id="cartWithItemsResult" type="ps.demo.springopa.entity.Cart">
         <id column="id" property="id"/>
         <result column="user_id" property="userId"/>
         <result column="total_price" property="totalPrice"/>
         <result column="created_at" property="createdAt"/>
         <collection property="items"
-                    ofType="ps.demo.commonlibx.entity.CartItem"
+                    ofType="ps.demo.springopa.entity.CartItem"
                     resultMap="cartItemResult"/>
     </resultMap>
 
-    <resultMap id="cartItemResult" type="ps.demo.commonlibx.entity.CartItem">
+    <resultMap id="cartItemResult" type="ps.demo.springopa.entity.CartItem">
         <id column="item_id" property="id"/>
         <result column="cart_id" property="cartId"/>
         <result column="product_id" property="productId"/>
