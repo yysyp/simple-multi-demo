@@ -33,13 +33,13 @@ spring:
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
-  type-aliases-package: ps.demo.entity
+  type-aliases-package: ps.demo.amoduletemplate.entity
 
 springdoc:
   api-docs:
     enabled: true
     path: /v3/api-docs
-  packages-to-scan: ps.demo
+  packages-to-scan: ps.demo.amoduletemplate
   show-actuator: false
   model-and-view-allowed: true
 
