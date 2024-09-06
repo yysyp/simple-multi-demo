@@ -1,0 +1,29 @@
+
+
+# Step1 create by copy the template module
+robocopy a-module-template new-module-name /E /MIR /Z /XD "not-copy" "upload-folder" "log" "target"
+
+# Step2
+Ctrl+Shift+R replace all "a-module-template" to "new-module-name" in new module directory.
+
+# Step3
+In new module refactor package "amoduletemplate" to new module package name.
+scope in "Project Files" (Double check the result, it should only update content in the new module)
+
+# Step4
+Ctrl+Shift+R replace all "ps.demo.amoduletemplate" to "ps.demo.newmodulepackagename" in new module directory.
+
+# Step5
+Parent pom.xml to add:
+<module>new-module-name</module>
+
+# Step6
+Rename AmoduleServerApplication to NewModuleName
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#For reference:
+set /P "NewModuleName=Enter Name:"
+robocopy a-module-template "%NewModuleName%" /E /MIR /Z /XD "not-copy" "upload-folder" "log" ".git" ".gitattributes" ".mvn" "node_modules" "dist" ".umi" ".umi-production" "target"
+echo 'Copy current a-module-template to %NewModuleName% done!'
+
+

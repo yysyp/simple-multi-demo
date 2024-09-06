@@ -20,6 +20,7 @@
         <module>common-upload-with-springbatch</module>
         <module>springboot-opa</module>
         <module>opa-springboot-demo-main</module>
+        <module>spring-inheritance</module>
     </modules>
 
     <dependencies>
