@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ps.demo.common.ClientErrorException;
@@ -19,6 +20,7 @@ public class CartController extends BaseController {
 
     @Autowired
     private CartService cartService;
+
 
     @Operation(summary = "Cart to get basic info and its detail items")
     @GetMapping(value = "/detail", produces = MediaType.APPLICATION_JSON_VALUE)

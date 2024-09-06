@@ -1,3 +1,5 @@
+https://github.com/open-policy-agent/opa/blob/main/LICENSE
+
 from: https://jcompetence.se/2023/06/22/open-policy-agent-opa-with-spring-boot-3/
 
 start docker:
@@ -52,6 +54,25 @@ allow if {
 
 In our case, jcompetence.authz policies will be accessible through 
 http://localhost:8181/v1/data/jcompetence/authz
+
+Test the openpolicyagent/opa via restful Endpoint:
+Post http://localhost:8181/v1/data/jcompetence/authz
+With Json payload:
+{
+    "input": {
+        "user": {
+            "username": "patrick",
+            "authorities": [{"authority": "all"}]
+        },
+        "path": ["v1", "users"],
+        "method": "GET",
+        "payload": {
+            "firstname": "patrick"
+        }
+    }
+}
+
+it will return {"result": {"allow": true}}
 
 ----------------------------------------------------------------------------------------
 <pre>
