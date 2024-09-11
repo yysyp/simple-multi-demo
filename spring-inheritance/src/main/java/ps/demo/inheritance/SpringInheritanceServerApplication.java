@@ -7,8 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Slf4j
-@SpringBootApplication
-public class AmoduleServerApplication implements ApplicationRunner {
+@SpringBootApplication (scanBasePackages = {"ps.demo.inheritance", "ps.demo.commonlibx"})
+public class SpringInheritanceServerApplication implements ApplicationRunner {
 
     public static void main(String[] args) {
         long maxMemory = Runtime.getRuntime().maxMemory();
@@ -20,7 +20,7 @@ public class AmoduleServerApplication implements ApplicationRunner {
         log.info("System.getenv() = {}", System.getenv());
         int processors = Runtime.getRuntime().availableProcessors();
         log.info("Available processors = {}", processors);
-        SpringApplication.run(AmoduleServerApplication.class, args);
+        SpringApplication.run(SpringInheritanceServerApplication.class, args);
     }
 
     @Override

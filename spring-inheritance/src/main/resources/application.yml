@@ -33,13 +33,13 @@ spring:
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
-  type-aliases-package: ps.demo.inheritance.entity
+  type-aliases-package: ps.demo.inheritance.entity, ps.demo.commonlibx.entity
 
 springdoc:
   api-docs:
     enabled: true
     path: /v3/api-docs
-  packages-to-scan: ps.demo.inheritance
+  packages-to-scan: ps.demo
   show-actuator: false
   model-and-view-allowed: true
 
