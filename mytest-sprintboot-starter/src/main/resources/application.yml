@@ -43,6 +43,18 @@ springdoc:
   show-actuator: false
   model-and-view-allowed: true
 
+sms:
+  aliyun:
+    pass-word: 12345
+    user-name: user1
+    sign: alibaba
+    url: http://aliyun.com/send
+  tencent:
+    pass-word: 6666
+    user-name: user2
+    sign: tencent
+    url: http://tencent.com/send
+
 ---
 
 spring:
