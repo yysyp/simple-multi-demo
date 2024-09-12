@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 
 @Component
-public class MapperTool {
+public class MapperToolX {
 
     private static Mapper dozer = DozerBeanMapperBuilder.buildDefault();
 

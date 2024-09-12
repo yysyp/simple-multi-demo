@@ -1,4 +1,4 @@
-package ps.demo.inheritance;
+package ps.demo.usespringbootstarter;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,12 +6,15 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import ps.demo.inheritance.common.MapperTool;
+import ps.demo.myteststarter.config.EnableSms;
+import ps.demo.myteststarter.service.AliyunSmsSenderImpl;
+import ps.demo.myteststarter.service.TencentSmsSenderImpl;
 
+@EnableSms
 @Slf4j
-//@SpringBootApplication (scanBasePackages = {"ps.demo.inheritance", "ps.demo.commonlibx"})
-@SpringBootApplication (scanBasePackages = {"ps.demo.**"})
-public class SpringInheritanceServerApplication implements ApplicationRunner {
+@SpringBootApplication
+//@SpringBootApplication (scanBasePackages = {"ps.demo.**"})
+public class UseStarterApplication implements ApplicationRunner {
 
     public static void main(String[] args) {
         long maxMemory = Runtime.getRuntime().maxMemory();
@@ -23,20 +26,22 @@ public class SpringInheritanceServerApplication implements ApplicationRunner {
         log.info("System.getenv() = {}", System.getenv());
         int processors = Runtime.getRuntime().availableProcessors();
         log.info("Available processors = {}", processors);
-        SpringApplication.run(SpringInheritanceServerApplication.class, args);
+        SpringApplication.run(UseStarterApplication.class, args);
     }
 
-//    @Autowired
-//    private ps.demo.commonlibx.common.MapperTool mapperTool1;
-//
-//    @Autowired
-//    private MapperTool mapperTool2;
+    @Autowired
+    private AliyunSmsSenderImpl aliyunSmsSender;
+
+    @Autowired
+    private TencentSmsSenderImpl tencentSmsSender;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         log.info("ApplicationArguments is: {}", args);
-//        log.info("-->commonlibx mapperTool = {}", mapperTool1);
-//        log.info("-->my mapperTool = {}", mapperTool2);
+
+        aliyunSmsSender.send("Use aliyun ");
+
+        tencentSmsSender.send("use tencent ");
 
     }
 
