@@ -21,7 +21,7 @@
         <module>springboot-opa</module>
         <module>opa-springboot-demo-main</module>
         <module>spring-inheritance</module>
-        <module>mytest-sprintboot-starter</module>
+        <module>mybatchupload-sprintboot-starter</module>
         <module>use-springbootstarter</module>
     </modules>
 

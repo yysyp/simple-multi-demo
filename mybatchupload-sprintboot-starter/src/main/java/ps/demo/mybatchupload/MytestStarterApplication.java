@@ -1,20 +1,14 @@
-package ps.demo.usespringbootstarter;
+package ps.demo.mybatchupload;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import ps.demo.mybatchupload.config.EnableSms;
-import ps.demo.mybatchupload.service.AliyunSmsSenderImpl;
-import ps.demo.mybatchupload.service.TencentSmsSenderImpl;
 
-@EnableSms
 @Slf4j
 @SpringBootApplication
-//@SpringBootApplication (scanBasePackages = {"ps.demo.**"})
-public class UseStarterApplication implements ApplicationRunner {
+public class MytestStarterApplication implements ApplicationRunner {
 
     public static void main(String[] args) {
         long maxMemory = Runtime.getRuntime().maxMemory();
@@ -26,23 +20,12 @@ public class UseStarterApplication implements ApplicationRunner {
         log.info("System.getenv() = {}", System.getenv());
         int processors = Runtime.getRuntime().availableProcessors();
         log.info("Available processors = {}", processors);
-        SpringApplication.run(UseStarterApplication.class, args);
+        SpringApplication.run(MytestStarterApplication.class, args);
     }
-
-    @Autowired
-    private AliyunSmsSenderImpl aliyunSmsSender;
-
-    @Autowired
-    private TencentSmsSenderImpl tencentSmsSender;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         log.info("ApplicationArguments is: {}", args);
-
-        aliyunSmsSender.send("Use aliyun ");
-
-        tencentSmsSender.send("use tencent ");
-
     }
 
 }
